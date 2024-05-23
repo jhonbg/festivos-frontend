@@ -3,7 +3,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
   }
   
   .input-container {
@@ -14,25 +15,35 @@
   
   .input-wrapper {
     display: flex;
-    border: 1px solid #ccc; /* Bordes alrededor del input y el botón */
-    border-radius: 5px; /* Esquinas redondeadas */
+    border-radius: 5px;
     margin: 50px;
     margin-left: 25%;
     margin-right: 25%;
+    justify-content:space-around;
   }
   
-  .input-field {
-    flex: 1; /* El input ocupa todo el espacio disponible */
-    margin-right: 5px; /* Espacio entre el input y el botón */
-  }
-  
-  .search-button {
-    margin-left: 5px; /* Espacio entre el input y el botón */
-  }
+  ::ng-deep .datatable-header-cell {
+    font-weight: bold;
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+    text-align: center;
+}
 
-  body
-{
-    background-image: url(../../../../assets/imagenes/85dd8ce79700662726d1968703da66ae.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+::ng-deep .datatable-body-row {
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    text-align: center;
+}
+
+::ng-deep .datatable-body-cell {
+    border-right: 1px solid #ccc;
+}
+
+::ng-deep .datatable-body {
+    border-top: 1px solid #8d9a9b;
+    background-color: rgb(182, 175, 175);
+}
+
+::ng-deep .datatable-row-ends .datatable-body-cell:last-child {
+    border-right: none;
 }

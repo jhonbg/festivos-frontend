@@ -3,10 +3,5 @@
     display: flex;
     justify-content: center;
     width: 100%;
-}
-
-body {
-    background-image: url('../assets/imagenes/85dd8ce79700662726d1968703da66ae.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 255, 0.548);
 }
