@@ -1,28 +1,10 @@
-<div class="input-wrapper">
-    <mat-form-field class="input-field">
-      <mat-label>Año</mat-label>
-      <input matInput [(ngModel)]="year" type="number" placeholder="Ingrese el año">
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="onYearChange(year)" class="search-button">Buscar</button>
-</div>
 <div class="table-container">
     <ngx-datatable [rows]="festivos" [columns]="columnas"></ngx-datatable>
 </div>
-<div class="input-container">
-    <div class="input-wrapper">
-        <mat-form-field class="input-field">
-          <mat-label>Año</mat-label>
-          <input matInput type="number" placeholder="Ingrese el año" [(ngModel)]="fecha.year">
-        </mat-form-field>
-        <mat-form-field class="input-field">
-          <mat-label>Mes</mat-label>
-          <input matInput type="number" placeholder="Ingrese el mes" [(ngModel)]="fecha.month">
-        </mat-form-field>
-        <mat-form-field class="input-field">
-          <mat-label>Día</mat-label>
-          <input matInput type="number" placeholder="Ingrese el día" [(ngModel)]="fecha.day">
-        </mat-form-field>
-        <button mat-raised-button color="primary" (click)="verificarFestividad(fecha.year, fecha.month, fecha.day)">Verificar</button>
-    </div>
-    <img src="assets/imagenes/85dd8ce79700662726d1968703da66ae.jpg">
+<div class="input-wrapper">
+  <mat-form-field class="input-field">
+    <mat-label>Año</mat-label>
+    <input matInput [(ngModel)]="year" type="number" placeholder="Ingrese el año">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onYearChange(year)" class="search-button">Buscar</button>
 </div>

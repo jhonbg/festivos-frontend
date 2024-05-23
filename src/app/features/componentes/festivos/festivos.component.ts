@@ -3,9 +3,8 @@ import { ReferenciasMaterialModule } from '../../../share/modulos/referencias-ma
 import { Festivo } from '../../../core/entidades/festivo';
 import { FormsModule } from '@angular/forms';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { FestivoService } from '../../servicios/festivo.service';
-import { ResponseDialogComponent } from '../../../response-dialog/response-dialog.component';
-import { MatDialog } from '@angular/material/dialog';
+import { FestivosService } from '../../servicios/festivos/festivos.service'
+
 
 @Component({
   selector: 'app-festivos',
@@ -28,10 +27,9 @@ export class FestivosComponent {
   ];
 
   public year: number = new Date().getFullYear();
-  public fecha = { year: new Date().getFullYear(), month: new Date().getMonth() + 1, day: new Date().getDate() };
   public tableContainerClass: string = 'table-container'; 
 
-  constructor(private festivoServicio: FestivoService, private dialog: MatDialog){
+  constructor(private festivoServicio: FestivosService){
     this.listar(this.year);
   }
 
@@ -55,27 +53,5 @@ export class FestivosComponent {
 
   public onYearChange(newYear: number) {
     this.listar(newYear);
-  }
-
-  public verificarFestividad(year: number, month: number, day: number) {
-    this.festivoServicio.verificar(year, month, day).subscribe({
-      next: (response: string) => {
-        this.openResponseDialog(response);
-      },
-      error: error => {
-        window.alert(error.message);
-      }
-    });
-  }
-
-  private openResponseDialog(response: string) {
-    const dialogRef = this.dialog.open(ResponseDialogComponent, {
-      width: '250px',
-      data: response
-    });
-  
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
   }
 }

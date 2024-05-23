@@ -1,0 +1,17 @@
+<div class="input-container">
+    <div class="input-wrapper">
+        <mat-form-field class="input-field">
+          <mat-label>Año</mat-label>
+          <input matInput type="number" placeholder="Ingrese el año" [(ngModel)]="fecha.year">
+        </mat-form-field>
+        <mat-form-field class="input-field">
+          <mat-label>Mes</mat-label>
+          <input matInput type="number" placeholder="Ingrese el mes" [(ngModel)]="fecha.month">
+        </mat-form-field>
+        <mat-form-field class="input-field">
+          <mat-label>Día</mat-label>
+          <input matInput type="number" placeholder="Ingrese el día" [(ngModel)]="fecha.day">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="verificarFestividad(fecha.year, fecha.month, fecha.day)">Verificar</button>
+    </div>
+</div>
